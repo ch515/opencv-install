@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -ex
 
-OPENCV_VERSION=4.1.2
+OPENCV_VERSION=4.2.0
 cd ~
 mkdir -p opencv && pushd opencv
 

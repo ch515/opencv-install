@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 set -ex
 
-OPENCV_VERSION=4.1.2
+OPENCV_VERSION=4.2.0
 pushd ~/opencv/opencv-$OPENCV_VERSION
 mkdir -p build
 pushd build
 MEM="$(free -m | awk /Mem:/'{print $2}')"  # Total memory in MB
-# RPI 4 with 4GB RAM is actually 3906MB RAM after factoring in GPU RAM split.
-# We're probably good to go with `-j $(nproc)` with 3GB or more RAM.
 NUM_JOBS=4
 
 # -D ENABLE_PRECOMPILED_HEADERS=OFF
@@ -27,8 +25,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D ENABLE_PRECOMPILED_HEADERS=OFF \
       -D WITH_TBB=ON \
       -D WITH_OPENMP=ON \
-      -D ENABLE_NEON=ON \
-      -D ENABLE_VFPV3=ON \
       -D OPENCV_EXTRA_EXE_LINKER_FLAGS=-latomic \
       -D PYTHON3_EXECUTABLE=$(which python3) \
       -D PYTHON_EXECUTABLE=$(which python2) \

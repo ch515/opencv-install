@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -ex
 
-sudo apt-get purge -y libreoffice*
-sudo apt-get clean
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
