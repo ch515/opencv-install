@@ -15,7 +15,6 @@ sudo apt-get install -y build-essential cmake pkg-config libjpeg-dev libtiff5-de
                         libxvidcore-dev libx264-dev libgtk2.0-dev libgtk-3-dev \
                         libatlas-base-dev libblas-dev libeigen{2,3}-dev liblapack-dev \
                         gfortran \
-                        openjdk-11-jdk ant \
                         python2.7-dev python3-dev python-pip python3-pip python python3
 sudo pip2 install -U pip
 sudo pip3 install -U pip
