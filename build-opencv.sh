@@ -28,7 +28,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D OPENCV_EXTRA_EXE_LINKER_FLAGS=-latomic \
       -D PYTHON3_EXECUTABLE=$(which python3) \
       -D PYTHON_EXECUTABLE=$(which python2) \
-      -D BUILD_SHARED_LIBS=OFF \
+      -D BUILD_SHARED_LIBS=ON \
       ..
 make -j "$NUM_JOBS"
 popd; popd
